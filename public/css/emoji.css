@@ -1,0 +1,116 @@
+/* Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. */
+/* SPDX-License-Identifier: MIT-0 */
+
+/* Reset */
+
+img:not([alt]) {
+  filter: blur(10px);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  border-radius: var(--radius);
+  z-index: 2;
+}
+
+.overlay .icon {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  font-size: 36px;
+  animation: scale 0.2s ease-in-out;
+  transition: all 0.15s ease-in-out;
+  filter: drop-shadow(0 6px 15px rgba(0, 0, 0, 0.2));
+}
+
+.overlay .icon.fade {
+  opacity: 0;
+}
+
+
+.emoji-picker {
+  margin-top: 20px;
+  margin: auto;
+  width: 36%;
+  padding: 10px;
+}
+
+.emojis {
+  display: flex;
+  border-radius: 64px;
+  background: #e9e9e9;
+  position: relative;
+  box-shadow: 8px 8px 16px #d6d6d6, -8px -8px 16px #fcfcfc;
+  z-index: 4;
+}
+
+.emoji-btn {
+  width: 64px;
+  height: 64px;
+  display: block;
+  background: transparent;
+  margin: 4px 2px;
+  font-size: 36px;
+  text-align: center;
+  border-radius: 60px;
+  border: 4px solid transparent;
+  transform: scale(1);
+  transition: all 0.15s ease-in-out;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.emoji-btn:hover,
+.emoji-btn:focus {
+  transform: scale(1.1);
+  border: 4px solid var(--bg-alt2-color-light);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.emoji-btn:active {
+  transform: scale(0.9);
+}
+
+.emoji-btn.active {
+  border: 4px solid #f97b00;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+@media (prefers-color-scheme: dark) {
+  #app {
+    background: var(--bg-color-dark);
+  }
+
+  .emojis {
+    background: var(--bg-alt-color-dark);
+    box-shadow: 8px 8px 16px #151a23, -8px -8px 16px #1d232f;
+  }
+
+  .emoji-btn:hover,
+  .emoji-btn:focus {
+    border: 4px solid var(--bg-alt2-color-dark);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .emoji-btn.active {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.6);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -20,12 +20,14 @@
     <link href="css/player.css" rel="stylesheet">
     <!-- video.js Player Code-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.6.6/video-js.css" rel="stylesheet">
+    <link href="css/emoji.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.6.6/video.min.js"></script>
     <!-- AMAZON IVS Player Code-->
     <script src="https://player.live-video.net/1.0.0/amazon-ivs-videojs-tech.min.js"></script>
     <script src="https://player.live-video.net/1.1.2/amazon-ivs-player.min.js"></script>
     <script src="https://player.live-video.net/1.0.0/amazon-ivs-quality-plugin.min.js"></script>
     <script src="js/player.js"></script>
+    <script src="js/emoji.js"></script>
 </head>
 <body>
     <div id="app">
@@ -35,8 +37,19 @@
             <div class="player-wrapper">
                 <div class="aspect-spacer"></div>
                 <div class="pos-absolute full-width full-height top-0">
+                    <div class="overlay">
+                    </div>
                     <video id="video-player" class="el-player" playsinline></video>
                 </div>
+            </div>
+            <div class="emoji-picker">
+                <ul class="emojis">
+                    <li><button class="emoji-btn" data-id="star"> 🌟 </button></li>
+                    <li><button class="emoji-btn" data-id="100"> 💯 </button></li>
+                    <li><button class="emoji-btn active" data-id="clap"> 👏 </button></li>
+                    <li><button class="emoji-btn" data-id="tada"> 🎉 </button></li>
+                    <li><button class="emoji-btn" data-id="laugh"> 😂 </button></li>
+                </ul>
             </div>
 
             <!-- Quiz UI -->
