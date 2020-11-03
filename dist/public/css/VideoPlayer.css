@@ -1,0 +1,66 @@
+/* Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. */
+/* SPDX-License-Identifier: MIT-0 */
+
+:root {
+  --video-width: 88.4rem;
+}
+
+.video-elem {
+  top: 0;
+  background: #000;
+}
+
+@media (max-width: 480px) { /* Smaller Screens */
+  :root {
+    --video-width: 100%;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 767px) { /* Small Screens */
+  :root {
+    --video-width: 100%;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 1024px) { /* Large Screens */
+  :root {
+    --video-width: 100%;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1280px) { /* Large Screens */
+  :root {
+    --video-width: 64rem;
+  }
+}
+
+.player-wrapper {
+  width: 70%;
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.aspect-spacer {
+  padding-bottom: 56.25%;
+}
+
+.video-elem {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background: #000;
+  border-radius: var(--radius);
+}
+
+video {
+  width: 100%;
+  border-radius: var(--radius);
+  background: #000;
+}
+
